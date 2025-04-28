@@ -1,28 +1,30 @@
-import React from "react";
 import { createBrowserRouter } from "react-router";
+
+import Home from "./components/Home";
+import User from "./components/User";
+import Post from "./components/Post";
+import AuthenticatePage from "./components/AuthenticatePage";
 
 // Import all Classes
 
 // Use loaders ?
 
-// Fix syntax issue in Component
-
 const routes = createBrowserRouter([
     {
         path: "/",
-        Component: <Home />,
+        Component: Home,
     },
     {
         path: "/user/:id",
-        Component: <User />,
+        Component: User,
     },
     {
         path: "/post/:id",
-        Component: <Post />,
+        Component: Post,
     },
     {
         path: "/authenticate",
-        Component: <AuthenticatePage />,
+        Component: AuthenticatePage,
     },
 ]);
 
