@@ -5,13 +5,12 @@ import User from "./components/User";
 import Post from "./components/Post";
 import AuthenticatePage from "./components/AuthenticatePage";
 
-// Import all Classes
-
-// Use loaders ?
+import allPosts from "./loaders/allPosts.js";
 
 const routes = createBrowserRouter([
     {
         path: "/",
+        loader: allPosts,
         Component: Home,
     },
     {
