@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useLoaderData } from "react-router";
 import Comment from "./Comment";
+import AddComment from "./AddComment";
 
 function Post() {
     const { post, comments } = useLoaderData();
@@ -29,6 +30,8 @@ function Post() {
 
             <section>
                 <h3>Comments</h3>
+
+                <AddComment postId={post.id} />
 
                 {comments.map((comment) => (
                     <Comment props={comment} key={comment.id} />
