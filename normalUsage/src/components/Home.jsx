@@ -7,9 +7,13 @@ function Home() {
 
     return (
         <main>
-            {posts.map((post) => (
-                <PostPreview props={post} key={post.id} />
-            ))}
+            {posts.map((post, i) => {
+                if (i > 20) {
+                    return;
+                }
+
+                return <PostPreview props={post} key={post.id} />;
+            })}
         </main>
     );
 }
