@@ -1,4 +1,5 @@
 import { data } from "react-router";
+import postComments from "./postComments.js";
 
 async function post({ params }) {
     if (isNaN(params.id) || parseInt(params.id) < 0) {
@@ -20,7 +21,7 @@ async function post({ params }) {
         throw data(post.errors, { status: originalResponse.status });
     }
 
-    return { post };
+    return { post, comments: await postComments({ params }) };
 }
 
 export default post;
