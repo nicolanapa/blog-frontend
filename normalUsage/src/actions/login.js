@@ -37,8 +37,6 @@ async function login({ request }) {
     console.log(loginRequest, loginData);
 
     if (!loginRequest.ok) {
-        JwtTokenHandler.removeToken();
-
         return { ok: false, error: loginData.errors };
     }
 
