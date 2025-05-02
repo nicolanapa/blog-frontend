@@ -1,18 +1,25 @@
-import React from "react";
-import { useLoaderData } from "react-router";
+import React, { useContext, useEffect } from "react";
+import LoggedInContext from "../context/LoggedInContext";
 import Login from "./Login";
 import Signup from "./Signup";
+import JwtTokenHandler from "../JwtTokenHandler";
 
 function AuthenticatePage() {
-    const { isCurrentlyLoggedIn } = useLoaderData();
+    const { isLoggedIn, setIsLoggedIn } = useContext(LoggedInContext);
 
-    console.log(isCurrentlyLoggedIn);
+    const logOut = () => {
+        JwtTokenHandler.removeToken();
+        setIsLoggedIn(false);
+    };
 
     return (
         <main>
-            <iframe title="Login" src="../login/frame" />
+            <h1>You're {!isLoggedIn && "not"} logged in!</h1>
+            {isLoggedIn && <button onClick={logOut}>Log Out</button>}
 
-            <iframe title="Signup" src="../signup/frame" />
+            <Login />
+
+            <Signup />
         </main>
     );
 }
