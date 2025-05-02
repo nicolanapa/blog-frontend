@@ -1,18 +1,18 @@
 class JwtTokenHandler {
     updateToken(token) {
-        localStorage.setItem("jwtTocken", token);
+        localStorage.setItem("jwtToken", token);
     }
 
-    removeTocken() {
-        localStorage.removeItem("jwtTocken");
+    removeToken() {
+        localStorage.removeItem("jwtToken");
     }
 
     getToken() {
-        return localStorage.getItem("jwtTocken");
+        return localStorage.getItem("jwtToken");
     }
 
     isCurrentlyLoggedIn() {
-        return localStorage.getItem("jwtTocken") === null ? false : true;
+        return localStorage.getItem("jwtToken") === null ? false : true;
     }
 }
 
