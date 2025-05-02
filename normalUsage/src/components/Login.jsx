@@ -3,7 +3,7 @@ import { useFetcher, useNavigate } from "react-router";
 
 function Login() {
     const navigate = useNavigate();
-    let fetcher = useFetcher();
+    const fetcher = useFetcher();
 
     useEffect(() => {
         if (!window.frameElement) {
