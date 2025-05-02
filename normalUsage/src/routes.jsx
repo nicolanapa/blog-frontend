@@ -13,47 +13,51 @@ import Signup from "./components/Signup.jsx";
 import allPosts from "./loaders/allPosts.js";
 import user from "./loaders/user.js";
 import post from "./loaders/Post.js";
-import isCurrentlyLoggedIn from "./loaders/isCurrentlyLoggedIn.js";
 
 import login from "./actions/login.js";
 import signup from "./actions/signup.js";
+import App from "./components/App.jsx";
 
 const routes = createBrowserRouter([
     {
-        Component: Layout,
-        errorElement: <Error />,
+        Component: App,
         children: [
             {
-                path: "/",
-                loader: allPosts,
-                Component: Home,
-            },
-            {
-                path: "/user/:id",
-                loader: user,
-                Component: User,
-            },
-            {
-                path: "/post/:id",
-                loader: post,
-                Component: Post,
-            },
-            {
-                path: "/authenticate",
-                loader: isCurrentlyLoggedIn,
-                Component: AuthenticatePage,
+                Component: Layout,
+                errorElement: <Error />,
+                children: [
+                    {
+                        path: "/",
+                        loader: allPosts,
+                        Component: Home,
+                    },
+                    {
+                        path: "/user/:id",
+                        loader: user,
+                        Component: User,
+                    },
+                    {
+                        path: "/post/:id",
+                        loader: post,
+                        Component: Post,
+                    },
+                    {
+                        path: "/authenticate",
+                        Component: AuthenticatePage,
+                        children: [
+                            {
+                                path: "login",
+                                action: login,
+                            },
+                            {
+                                path: "signup",
+                                action: signup,
+                            },
+                        ],
+                    },
+                ],
             },
         ],
-    },
-    {
-        path: "/login/frame",
-        action: login,
-        Component: Login,
-    },
-    {
-        path: "/signup/frame",
-        action: signup,
-        Component: Signup,
     },
 ]);
 
