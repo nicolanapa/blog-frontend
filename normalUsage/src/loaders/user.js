@@ -20,7 +20,15 @@ async function user({ params }) {
         throw data(user.errors, { status: originalResponse.status });
     }
 
-    return { user };
+    let posts = [];
+
+    if (user.type === "blogAuthor") {
+        posts = await fetch(
+            import.meta.env.VITE_FULL_HOSTNAME + "/user/" + params.id + "/posts"
+        ).then((res) => res.json());
+    }
+
+    return { user, posts };
 }
 
 export default user;
