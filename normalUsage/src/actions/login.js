@@ -13,7 +13,7 @@ async function login({ request }) {
     if (data.get("password").length < 4 || data.get("password").length > 128) {
         return {
             ok: false,
-            error: "Password must be between 4 and 32 chars length",
+            error: "Password must be between 4 and 128 chars length",
         };
     }
 
@@ -38,7 +38,7 @@ async function login({ request }) {
 
     if (!loginRequest.ok) {
         JwtTokenHandler.removeToken();
-        
+
         return { ok: false, error: loginData.errors };
     }
 
