@@ -9,7 +9,7 @@ import Post from "./components/Post";
 import AuthenticatePage from "./components/AuthenticatePage";
 
 import allPosts from "./loaders/allPosts.js";
-import user from "./loaders/User.js";
+import user from "./loaders/user.js";
 import post from "./loaders/Post.js";
 
 const routes = createBrowserRouter([
