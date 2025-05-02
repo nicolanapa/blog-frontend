@@ -10,7 +10,7 @@ function Signup() {
     const updateIsLoggedIn = () => {
         setTimeout(() => {
             setIsLoggedIn(JwtTokenHandler.isCurrentlyLoggedIn());
-        }, 1);
+        }, 250);
     };
 
     useEffect(() => {
