@@ -7,10 +7,16 @@ import Home from "./components/Home";
 import User from "./components/User";
 import Post from "./components/Post";
 import AuthenticatePage from "./components/AuthenticatePage";
+import Login from "./components/Login.jsx";
+import Signup from "./components/Signup.jsx";
 
 import allPosts from "./loaders/allPosts.js";
 import user from "./loaders/user.js";
 import post from "./loaders/Post.js";
+import isCurrentlyLoggedIn from "./loaders/isCurrentlyLoggedIn.js";
+
+import login from "./actions/login.js";
+import signup from "./actions/signup.js";
 
 const routes = createBrowserRouter([
     {
@@ -34,9 +40,20 @@ const routes = createBrowserRouter([
             },
             {
                 path: "/authenticate",
+                loader: isCurrentlyLoggedIn,
                 Component: AuthenticatePage,
             },
         ],
+    },
+    {
+        path: "/login/frame",
+        action: login,
+        Component: Login,
+    },
+    {
+        path: "/signup/frame",
+        action: signup,
+        Component: Signup,
     },
 ]);
 
