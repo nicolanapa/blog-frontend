@@ -1,22 +1,28 @@
-import React, { useEffect } from "react";
-import { useFetcher, useNavigate } from "react-router";
+import React, { useContext, useEffect } from "react";
+import { useFetcher } from "react-router";
+import LoggedInContext from "../context/LoggedInContext";
+import JwtTokenHandler from "../JwtTokenHandler";
 
 function Login() {
-    const navigate = useNavigate();
     const fetcher = useFetcher();
+    const { setIsLoggedIn } = useContext(LoggedInContext);
+
+    const updateIsLoggedIn = () => {
+        setTimeout(() => {
+            setIsLoggedIn(JwtTokenHandler.isCurrentlyLoggedIn());
+        }, 1);
+    };
 
     useEffect(() => {
-        if (!window.frameElement) {
-            navigate("/authenticate");
-        }
+        updateIsLoggedIn();
     }, []);
 
     return (
         <div>
             <h2>Login</h2>
 
-            <fetcher.Form method="post">
-                {fetcher.data?.ok && <p>Logged in!</p>}
+            <fetcher.Form method="post" action="/authenticate/login">
+                {fetcher.data?.ok && updateIsLoggedIn()}
                 {fetcher.data?.error && <p>{fetcher.data.error}</p>}
 
                 <label htmlFor="">Username: </label>
