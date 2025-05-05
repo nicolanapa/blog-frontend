@@ -27,7 +27,7 @@ function Signup() {
                 )}
                 {fetcher.data?.error && <p>{fetcher.data.error}</p>}
 
-                <label htmlFor="">Username: </label>
+                <label htmlFor="username">Username: </label>
                 <input
                     type="text"
                     id="username"
@@ -37,7 +37,7 @@ function Signup() {
                     required
                 />
 
-                <label htmlFor="">Password: </label>
+                <label htmlFor="password">Password: </label>
                 <input
                     type="password"
                     id="password"
@@ -47,7 +47,7 @@ function Signup() {
                     required
                 />
 
-                <label htmlFor="">Secret Blog Author Key (optional): </label>
+                <label htmlFor="secret-key">Secret Blog Author Key (optional): </label>
                 <input
                     type="password"
                     id="secret-key"

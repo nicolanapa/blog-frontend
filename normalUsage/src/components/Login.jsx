@@ -25,7 +25,7 @@ function Login() {
                 {fetcher.data?.ok && updateIsLoggedIn()}
                 {fetcher.data?.error && <p>{fetcher.data.error}</p>}
 
-                <label htmlFor="">Username: </label>
+                <label htmlFor="username">Username: </label>
                 <input
                     type="text"
                     id="username"
@@ -35,7 +35,7 @@ function Login() {
                     required
                 />
 
-                <label htmlFor="">Password: </label>
+                <label htmlFor="password">Password: </label>
                 <input
                     type="password"
                     id="password"
