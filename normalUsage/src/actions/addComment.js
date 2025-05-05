@@ -23,7 +23,7 @@ async function addComment({ request }) {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                Authorization: "Bearer " + JwtTokenHandler.getToken(),
+                Authorization: "Bearer 5" + JwtTokenHandler.getToken(),
             },
             body: JSON.stringify({
                 content: data.get("content"),
@@ -32,6 +32,8 @@ async function addComment({ request }) {
     );
 
     if (commentRequest.status === 401) {
+        JwtTokenHandler.removeToken();
+
         return {
             ok: commentRequest.ok,
             error: "Unauthorized, please login through /authenticate",
