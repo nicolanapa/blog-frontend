@@ -17,6 +17,7 @@ import post from "./loaders/Post.js";
 import login from "./actions/login.js";
 import signup from "./actions/signup.js";
 import App from "./components/App.jsx";
+import addComment from "./actions/addComment.js";
 
 const routes = createBrowserRouter([
     {
@@ -40,6 +41,12 @@ const routes = createBrowserRouter([
                         path: "/post/:id",
                         loader: post,
                         Component: Post,
+                        children: [
+                            {
+                                path: "addComment",
+                                action: addComment,
+                            },
+                        ],
                     },
                     {
                         path: "/authenticate",
