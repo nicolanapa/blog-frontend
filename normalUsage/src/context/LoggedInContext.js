@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import JwtTokenHandler from "../JwtTokenHandler.js";
+import JwtTokenHandler from "../scripts/JwtTokenHandler.js";
 
 const LoggedInContext = createContext({
     isLoggedIn: JwtTokenHandler.isCurrentlyLoggedIn(),

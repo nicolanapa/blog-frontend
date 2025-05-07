@@ -1,4 +1,4 @@
-import JwtTokenHandler from "../JwtTokenHandler";
+import JwtTokenHandler from "../scripts/JwtTokenHandler";
 
 async function addComment({ request }) {
     if (!JwtTokenHandler.isCurrentlyLoggedIn()) {
@@ -6,6 +6,7 @@ async function addComment({ request }) {
     }
 
     const data = await request.formData();
+    console.log(JwtTokenHandler.getToken())
 
     if (data.get("content").length === 0 || data.get("content").length > 1024) {
         return {
@@ -23,7 +24,7 @@ async function addComment({ request }) {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                Authorization: "Bearer 5" + JwtTokenHandler.getToken(),
+                Authorization: "Bearer " + JwtTokenHandler.getToken(),
             },
             body: JSON.stringify({
                 content: data.get("content"),

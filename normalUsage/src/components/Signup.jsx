@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { useFetcher } from "react-router";
 import LoggedInContext from "../context/LoggedInContext";
-import JwtTokenHandler from "../JwtTokenHandler";
+import JwtTokenHandler from "../scripts/JwtTokenHandler";
 
 function Signup() {
     const fetcher = useFetcher();

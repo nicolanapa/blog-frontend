@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Outlet } from "react-router";
-import JwtTokenHandler from "../JwtTokenHandler";
+import JwtTokenHandler from "../scripts/JwtTokenHandler";
 import LoggedInContext from "../context/LoggedInContext";
 
 function App() {

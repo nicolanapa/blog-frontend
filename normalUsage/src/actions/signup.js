@@ -1,4 +1,4 @@
-import JwtTokenHandler from "../JwtTokenHandler";
+import JwtTokenHandler from "../scripts/JwtTokenHandler";
 
 async function signup({ request }) {
     const data = await request.formData();

@@ -1,8 +1,8 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import LoggedInContext from "../context/LoggedInContext";
 import Login from "./Login";
 import Signup from "./Signup";
-import JwtTokenHandler from "../JwtTokenHandler";
+import JwtTokenHandler from "../scripts/JwtTokenHandler";
 
 function AuthenticatePage() {
     const { isLoggedIn, setIsLoggedIn } = useContext(LoggedInContext);
