@@ -1,0 +1,14 @@
+.post-container {
+    /*border: 1px solid rgb(130, 130, 130);
+    border-radius: 10px;*/
+    padding: 30px 25px;
+    margin: 15px 6%;
+}
+
+.post-info {
+    padding: 15px 25px;
+}
+
+.comments-container {
+    margin-top: 25px;
+}

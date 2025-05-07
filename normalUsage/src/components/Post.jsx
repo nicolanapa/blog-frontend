@@ -2,16 +2,15 @@ import React from "react";
 import { Link, useLoaderData } from "react-router";
 import Comment from "./Comment";
 import AddComment from "./AddComment";
+import "../styles/post.css";
 
 function Post() {
     const { post, comments } = useLoaderData();
 
-    console.log(post, comments);
-
     return (
-        <article>
-            <header>
-                <small>
+        <article className="post-container">
+            <header className="post-info">
+                <small className="date">
                     <time dateTime={post.publishDate}>
                         {new Date(post.publishDate).toLocaleString()}
                     </time>
@@ -28,7 +27,7 @@ function Post() {
 
             <p>{post.content}</p>
 
-            <section>
+            <section className="comments-container">
                 <h3>Comments</h3>
 
                 <AddComment postId={post.id} />

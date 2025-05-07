@@ -1,13 +1,14 @@
 import React from "react";
 import { useFetcher } from "react-router";
+import "../styles/comment.css";
 
 function AddComment() {
     const fetcher = useFetcher();
 
     return (
-        <fetcher.Form method="post" action="./addComment">
-            {fetcher.data?.ok && <p>Success</p>}
-            {fetcher.data?.error && <p>{fetcher.data.error}</p>}
+        <fetcher.Form method="post" action="./addComment" className="add-comment">
+            {fetcher.data?.ok && <p className="success">Success</p>}
+            {fetcher.data?.error && <p className="error">{fetcher.data.error}</p>}
 
             <label htmlFor="content">Leave a Comment!</label>
             <input
@@ -18,7 +19,7 @@ function AddComment() {
                 required
             />
 
-            <button type="submit">Submit</button>
+            <button type="submit" className="submit-button">Submit</button>
         </fetcher.Form>
     );
 }
