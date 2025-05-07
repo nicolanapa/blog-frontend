@@ -3,6 +3,7 @@ import LoggedInContext from "../context/LoggedInContext";
 import Login from "./Login";
 import Signup from "./Signup";
 import JwtTokenHandler from "../scripts/JwtTokenHandler";
+import "../styles/authenticatePage.css";
 
 function AuthenticatePage() {
     const { isLoggedIn, setIsLoggedIn } = useContext(LoggedInContext);
@@ -13,9 +14,11 @@ function AuthenticatePage() {
     };
 
     return (
-        <main>
-            <h1>You&apos;re {!isLoggedIn && "not"} logged in!</h1>
-            {isLoggedIn && <button onClick={logOut}>Log Out</button>}
+        <main className="authenticate-container">
+            <div className="login-status">
+                <h1>You&apos;re {!isLoggedIn && "not"} logged in!</h1>
+                {isLoggedIn && <button onClick={logOut} className="log-out-button">Log Out</button>}
+            </div>
 
             <Login />
 
