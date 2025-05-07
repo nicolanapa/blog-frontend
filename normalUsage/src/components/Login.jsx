@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { useFetcher } from "react-router";
 import LoggedInContext from "../context/LoggedInContext";
 import JwtTokenHandler from "../scripts/JwtTokenHandler";
+import "../styles/authenticatePage.css";
 
 function Login() {
     const fetcher = useFetcher();
@@ -19,33 +20,43 @@ function Login() {
 
     return (
         <div>
-            <h2>Login</h2>
+            <h2 className="section-title">Login</h2>
 
-            <fetcher.Form method="post" action="/authenticate/login">
+            <fetcher.Form
+                method="post"
+                action="/authenticate/login"
+                className="authentication-form"
+            >
                 {fetcher.data?.ok && updateIsLoggedIn()}
-                {fetcher.data?.error && <p>{fetcher.data.error}</p>}
+                {fetcher.data?.error && (
+                    <p className="error">{fetcher.data.error}</p>
+                )}
 
-                <label htmlFor="username">Username: </label>
-                <input
-                    type="text"
-                    id="username"
-                    name="username"
-                    minLength={2}
-                    maxLength={32}
-                    required
-                />
+                <div>
+                    <label htmlFor="username">Username: </label>
+                    <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        minLength={2}
+                        maxLength={32}
+                        required
+                    />
 
-                <label htmlFor="password">Password: </label>
-                <input
-                    type="password"
-                    id="password"
-                    name="password"
-                    minLength={4}
-                    maxLength={128}
-                    required
-                />
+                    <label htmlFor="password">Password: </label>
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        minLength={4}
+                        maxLength={128}
+                        required
+                    />
+                </div>
 
-                <button type="submit">Login</button>
+                <button type="submit" className="login-button">
+                    Login
+                </button>
             </fetcher.Form>
         </div>
     );
