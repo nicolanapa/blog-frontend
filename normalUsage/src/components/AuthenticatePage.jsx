@@ -14,7 +14,7 @@ function AuthenticatePage() {
 
     return (
         <main>
-            <h1>You're {!isLoggedIn && "not"} logged in!</h1>
+            <h1>You&apos;re {!isLoggedIn && "not"} logged in!</h1>
             {isLoggedIn && <button onClick={logOut}>Log Out</button>}
 
             <Login />
