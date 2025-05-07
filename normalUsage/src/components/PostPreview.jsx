@@ -1,7 +1,10 @@
 import React from "react";
 import { Link } from "react-router";
+import PropTypes from "prop-types";
 
-function PostPreview({ props }) {
+function PostPreview(props) {
+    console.log(props);
+
     return (
         <article>
             <small>
@@ -20,5 +23,12 @@ function PostPreview({ props }) {
         </article>
     );
 }
+
+PostPreview.propTypes = {
+    id: PropTypes.number.isRequired,
+    userId: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    publishDate: PropTypes.instanceOf(Date).isRequired,
+};
 
 export default PostPreview;

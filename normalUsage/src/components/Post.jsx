@@ -34,7 +34,11 @@ function Post() {
                 <AddComment postId={post.id} />
 
                 {comments.map((comment) => (
-                    <Comment props={comment} key={comment.id} />
+                    <Comment
+                        userId={comment.userId}
+                        content={comment.content}
+                        key={comment.id}
+                    />
                 ))}
             </section>
         </article>
