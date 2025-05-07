@@ -1,7 +1,7 @@
 import React from "react";
 import { useFetcher } from "react-router";
 
-function AddComment({ postId }) {
+function AddComment() {
     const fetcher = useFetcher();
 
     return (
