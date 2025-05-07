@@ -7,8 +7,6 @@ import Home from "./components/Home";
 import User from "./components/User";
 import Post from "./components/Post";
 import AuthenticatePage from "./components/AuthenticatePage";
-import Login from "./components/Login.jsx";
-import Signup from "./components/Signup.jsx";
 
 import allPosts from "./loaders/allPosts.js";
 import user from "./loaders/user.js";
