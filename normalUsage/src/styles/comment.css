@@ -16,3 +16,26 @@
     color: white;
     padding: 12px 20px;
 }
+
+/* Comment.jsx */
+
+.comment {
+    padding: 10px 2.5px;
+    margin: 10px 0;
+}
+
+.comment div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-comment {
+    display: flex;
+    column-gap: 7.5px;
+    margin-bottom: 12.5px;
+}
+
+.content {
+    margin-left: 12.5px;
+}

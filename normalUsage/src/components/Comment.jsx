@@ -4,19 +4,39 @@ import PropTypes from "prop-types";
 import "../styles/comment.css";
 
 function Comment(props) {
+    console.log(props);
     return (
-        <article>
-            <h4>
-                <Link to={"/user/" + props.userId}>User{props.userId}</Link>
-            </h4>
+        <article className="comment">
+            <div>
+                <div className="user-comment">
+                    <img
+                        src="/icons/account.svg"
+                        alt="User"
+                        width="30px"
+                        height="auto"
+                    />
+                    <h4>
+                        <Link to={"/user/" + props.userId}>
+                            User{props.userId}
+                        </Link>
+                    </h4>
+                </div>
 
-            <p>{props.content}</p>
+                <small>
+                    <time dateTime={props.publishDate}>
+                        {new Date(props.publishDate).toLocaleDateString()}
+                    </time>
+                </small>
+            </div>
+
+            <p className="content">{props.content}</p>
         </article>
     );
 }
 
 Comment.propTypes = {
     userId: PropTypes.number,
+    publishDate: PropTypes.instanceOf(Date),
     content: PropTypes.string,
 };
 
