@@ -34,7 +34,13 @@ function User() {
                     <h2>Published Posts</h2>
 
                     {posts.map((post) => (
-                        <PostPreview props={post} key={post.id} />
+                        <PostPreview
+                            id={post.id}
+                            userId={post.userId}
+                            title={post.title}
+                            publishDate={post.publishDate}
+                            key={post.id}
+                        />
                     ))}
                 </div>
             ) : (
