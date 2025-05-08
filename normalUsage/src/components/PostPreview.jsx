@@ -3,8 +3,6 @@ import { Link } from "react-router";
 import PropTypes from "prop-types";
 
 function PostPreview(props) {
-    console.log(props);
-
     return (
         <article>
             <small>
