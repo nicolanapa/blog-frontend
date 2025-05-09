@@ -1,10 +1,13 @@
 import React from "react";
 import { Link } from "react-router";
 import PropTypes from "prop-types";
+import "../styles/post.css";
 
 function PostPreview(props) {
     return (
-        <article>
+        <article className="post-preview">
+            <img src="/icons/post.svg" alt="Post" width="48px" height="auto" className="preview-photo" />
+
             <small>
                 <time dateTime={props.publishDate}>
                     {new Date(props.publishDate).toLocaleString()}
