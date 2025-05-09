@@ -2,6 +2,7 @@ import React from "react";
 import { useLoaderData } from "react-router";
 import PostPreview from "./PostPreview";
 import "../styles/user.css";
+import "../styles/post.css";
 
 function User() {
     const { user, posts } = useLoaderData();
@@ -33,15 +34,17 @@ function User() {
                 <div className="posts">
                     <h2>Published Posts</h2>
 
-                    {posts.map((post) => (
-                        <PostPreview
-                            id={post.id}
-                            userId={post.userId}
-                            title={post.title}
-                            publishDate={post.publishDate}
-                            key={post.id}
-                        />
-                    ))}
+                    <div className="post-preview-container">
+                        {posts.map((post) => (
+                            <PostPreview
+                                id={post.id}
+                                userId={post.userId}
+                                title={post.title}
+                                publishDate={post.publishDate}
+                                key={post.id}
+                            />
+                        ))}
+                    </div>
                 </div>
             ) : (
                 ""

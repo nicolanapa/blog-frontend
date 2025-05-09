@@ -1,12 +1,13 @@
 import React from "react";
 import { useLoaderData } from "react-router";
 import PostPreview from "./PostPreview";
+import "../styles/post.css";
 
 function Home() {
     const { posts } = useLoaderData();
 
     return (
-        <main>
+        <main className="post-preview-container">
             {posts.map((post, i) => {
                 if (i > 20) {
                     return;
