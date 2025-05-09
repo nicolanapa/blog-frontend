@@ -26,6 +26,6 @@
 .posts {
     display: flex;
     flex-direction: column;
-    margin: 40px 20%;
+    margin: 40px 10px;
     row-gap: 15px;
 }
