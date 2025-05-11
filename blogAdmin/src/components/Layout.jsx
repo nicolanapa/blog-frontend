@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, Outlet } from "react-router";
 import LoggedInContext from "../context/LoggedInContext";
-import { jwtDecode } from "jwt-decode";
 import JwtTokenHandler from "../scripts/JwtTokenHandler";
 import "../styles/layout.css";
 
@@ -10,10 +9,7 @@ function Layout() {
     const [userId, setUserId] = useState(0);
 
     useEffect(() => {
-        if (JwtTokenHandler.isCurrentlyLoggedIn()) {
-            const decodedJwt = jwtDecode(JwtTokenHandler.getToken());
-            setUserId(decodedJwt.id);
-        }
+        setUserId(JwtTokenHandler.returnId());
     }, [isLoggedIn]);
 
     return (
