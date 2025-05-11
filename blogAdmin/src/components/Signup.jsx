@@ -53,18 +53,19 @@ function Signup() {
                         required
                     />
 
-                    <label htmlFor="secret-key">
-                        Secret Blog Author Key (optional):{" "}
-                    </label>
+                    <label htmlFor="secret-key">Secret Blog Author Key: </label>
                     <input
                         type="password"
                         id="secret-key"
                         name="blogAuthorSecretKey"
                         maxLength={64}
+                        required
                     />
                 </div>
 
-                <button type="submit" className="login-button">Signup</button>
+                <button type="submit" className="login-button">
+                    Signup
+                </button>
             </fetcher.Form>
         </div>
     );
