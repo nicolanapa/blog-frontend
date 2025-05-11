@@ -45,6 +45,11 @@ async function signup({ request }) {
 
     JwtTokenHandler.updateToken(loginData.jwt);
 
+    if (JwtTokenHandler.returnType() !== "blogAuthor") {
+        JwtTokenHandler.removeToken();
+        return { ok: false, error: "Not a Blog Author" };
+    }
+
     return { ok: true };
 }
 
