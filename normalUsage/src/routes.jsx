@@ -10,7 +10,7 @@ import AuthenticatePage from "./components/AuthenticatePage";
 
 import allPosts from "./loaders/allPosts.js";
 import user from "./loaders/user.js";
-import post from "./loaders/Post.js";
+import post from "./loaders/post.js";
 
 import login from "./actions/login.js";
 import signup from "./actions/signup.js";
