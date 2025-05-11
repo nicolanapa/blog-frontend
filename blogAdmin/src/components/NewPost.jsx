@@ -5,7 +5,12 @@ function NewPost() {
     const fetcher = useFetcher();
 
     return (
-        <fetcher.Form method="POST">
+        <fetcher.Form method="post" action="/newPost">
+            {fetcher.data?.ok && <p className="success">Success!</p>}
+            {fetcher.data?.error && (
+                <p className="error">{fetcher.data.error}</p>
+            )}
+
             <label htmlFor="title">Title: </label>
             <input
                 type="text"
