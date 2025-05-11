@@ -1,0 +1,40 @@
+import React from "react";
+import { useFetcher } from "react-router";
+
+function NewPost() {
+    const fetcher = useFetcher();
+
+    return (
+        <fetcher.Form method="POST">
+            <label htmlFor="title">Title: </label>
+            <input
+                type="text"
+                id="title"
+                name="title"
+                maxLength={32}
+                required
+            />
+
+            <label htmlFor="content">Content: </label>
+            <textarea
+                type="text"
+                id="content"
+                name="content"
+                maxLength={4096}
+                required
+            />
+
+            <label htmlFor="is-published">Post is set as </label>
+            <select id="is-published" name="isPublished">
+                <option value="true" defaultValue={true}>
+                    Published
+                </option>
+                <option value="false">Unpublished</option>
+            </select>
+
+            <button type="submit">Post</button>
+        </fetcher.Form>
+    );
+}
+
+export default NewPost;
