@@ -1,0 +1,52 @@
+.authenticate-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-status {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 45px;
+}
+
+.log-out-button {
+    color: white;
+    background-color: rgb(144, 6, 6);
+    box-shadow: 0px 0px 20px 4px #dcdcdc;
+    border-style: none;
+    border-radius: 20px;
+    padding: 25px 35px;
+    margin-top: 20px;
+}
+
+.section-title {
+    margin-left: 10%;
+}
+
+.authentication-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 25px;
+    margin-bottom: 20px;
+}
+
+.authentication-form div {
+    display: flex;
+    flex-direction: column;
+}
+
+.authentication-form div > input {
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 7.5px 12.5px;
+    margin: 10px;
+}
+
+.login-button {
+    background-color: #d4ffdc;
+    border-style: none;
+    border-radius: 3px;
+    padding: 25px;
+}

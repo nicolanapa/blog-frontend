@@ -1,0 +1,31 @@
+.user-info {
+    display: flex;
+    justify-content: center;
+    margin: 15px 20px;
+}
+
+.user-info > div {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(255, 240, 236);
+    border-radius: 20px;
+    column-gap: 15px;
+    padding: 30px 45px;
+}
+
+.username {
+    font-size: xx-large;
+    font-style: normal;
+    margin: 5px 3.5px;
+}
+
+.id {
+    font-size: x-small;
+}
+
+.posts {
+    display: flex;
+    flex-direction: column;
+    margin: 40px 10px;
+    row-gap: 15px;
+}
