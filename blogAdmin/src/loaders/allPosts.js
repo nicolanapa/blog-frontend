@@ -18,7 +18,13 @@ async function allPosts() {
                 },
             }
         )
-            .then((res) => res.json())
+            .then((res) => {
+                if (res.status === 401) {
+                    JwtTokenHandler.removeToken();
+                }
+
+                return res.json();
+            })
             .catch((e) => {
                 console.error(e);
                 return [];
