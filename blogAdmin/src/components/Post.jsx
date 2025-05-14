@@ -59,6 +59,7 @@ function Post() {
 
                 {comments.map((comment) => (
                     <Comment
+                        id={comment.id}
                         userId={comment.userId}
                         publishDate={comment.publishDate}
                         content={comment.content}
