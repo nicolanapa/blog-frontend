@@ -1,43 +1,63 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router";
 import PropTypes from "prop-types";
 import "../styles/comment.css";
+import EditComment from "./EditComment";
 
 function Comment(props) {
-    console.log(props);
+    const [viewMode, setViewMode] = useState(true);
+
     return (
         <article className="comment">
-            <div>
-                <div className="user-comment">
-                    <img
-                        src="/icons/account.svg"
-                        alt="User"
-                        width="30px"
-                        height="auto"
-                    />
-                    <h4>
-                        <Link to={"/user/" + props.userId}>
-                            User{props.userId}
-                        </Link>
-                    </h4>
-                </div>
+            {viewMode && (
+                <>
+                    <div>
+                        <div className="user-comment">
+                            <img
+                                src="/icons/account.svg"
+                                alt="User"
+                                width="30px"
+                                height="auto"
+                            />
+                            <h4>
+                                <Link to={"/user/" + props.userId}>
+                                    User{props.userId}
+                                </Link>
+                            </h4>
+                        </div>
 
-                <small>
-                    <time dateTime={props.publishDate}>
-                        {new Date(props.publishDate).toLocaleDateString()}
-                    </time>
-                </small>
-            </div>
+                        <small>
+                            <time dateTime={props.publishDate}>
+                                {new Date(
+                                    props.publishDate
+                                ).toLocaleDateString()}
+                            </time>
+                        </small>
+                    </div>
 
-            <p className="content">{props.content}</p>
+                    <p className="content">{props.content}</p>
+                </>
+            )}
+
+            {!viewMode && <EditComment id={props.id} content={props.content} />}
+
+            <button type="button" onClick={() => setViewMode(!viewMode)}>
+                <img
+                    src="/icons/edit.svg"
+                    alt="Edit this comment and go into edit mode"
+                    width="20px"
+                    height="auto"
+                />
+            </button>
         </article>
     );
 }
 
 Comment.propTypes = {
+    id: PropTypes.number.isRequired,
     userId: PropTypes.number,
-    publishDate: PropTypes.instanceOf(Date),
-    content: PropTypes.string,
+    publishDate: PropTypes.instanceOf(Date).isRequired,
+    content: PropTypes.string.isRequired,
 };
 
 export default Comment;
