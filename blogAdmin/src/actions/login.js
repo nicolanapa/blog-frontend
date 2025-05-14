@@ -34,8 +34,6 @@ async function login({ request }) {
         return res.json();
     });
 
-    console.log(loginRequest, loginData);
-
     if (!loginRequest.ok) {
         return { ok: false, error: loginData.errors };
     }

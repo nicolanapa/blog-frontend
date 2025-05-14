@@ -17,7 +17,6 @@ class JwtTokenHandler {
         if (this.isCurrentlyLoggedIn()) {
             try {
                 const decodedJwt = jwtDecode(this.getToken());
-                console.log(decodedJwt);
 
                 return decodedJwt.type;
             } catch {
@@ -32,7 +31,6 @@ class JwtTokenHandler {
         if (this.isCurrentlyLoggedIn()) {
             try {
                 const decodedJwt = jwtDecode(this.getToken());
-                console.log(decodedJwt);
 
                 return decodedJwt.id;
             } catch {

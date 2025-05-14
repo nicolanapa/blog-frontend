@@ -54,8 +54,6 @@ async function editPost({ request }) {
 
     const postResponse = await postRequest.json();
 
-    console.log(postRequest, postResponse);
-
     if (!postRequest.ok) {
         console.log(postResponse);
 

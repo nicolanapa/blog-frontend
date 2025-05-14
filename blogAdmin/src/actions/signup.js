@@ -35,8 +35,6 @@ async function signup({ request }) {
         return res.json();
     });
 
-    console.log(signupRequest, loginData);
-
     if (!signupRequest.ok) {
         JwtTokenHandler.removeToken();
 

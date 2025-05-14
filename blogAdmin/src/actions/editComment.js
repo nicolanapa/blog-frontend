@@ -19,7 +19,6 @@ async function editComment({ request }) {
 
     let commentId = request.url.split("/");
     commentId = commentId[commentId.length - 2];
-    console.log(commentId);
 
     const commentRequest = await fetch(
         import.meta.env.VITE_FULL_HOSTNAME + "/comment/" + commentId,
@@ -45,8 +44,6 @@ async function editComment({ request }) {
     }
 
     const commentResponse = await commentRequest.json();
-
-    console.log(commentRequest, commentResponse);
 
     if (!commentRequest.ok) {
         console.log(commentResponse);
