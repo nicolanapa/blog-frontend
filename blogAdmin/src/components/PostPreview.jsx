@@ -33,6 +33,7 @@ function PostPreview(props) {
 
             <button
                 type="button"
+                className="button-published spacing-top"
                 onClick={() =>
                     changePublishState(props, setIsPublished, isPublished)
                 }
