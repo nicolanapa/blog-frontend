@@ -17,7 +17,11 @@ async function changePublishState(post, setIsPublished, isPublished) {
         }
     );
 
-    console.log(request);
+    if (request.status === 401) {
+        JwtTokenHandler.removeToken();
+        
+        return;
+    }
 
     setIsPublished(!isPublished);
 
