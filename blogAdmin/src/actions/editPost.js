@@ -1,6 +1,6 @@
 import JwtTokenHandler from "../scripts/JwtTokenHandler";
 
-async function updatePost({ request }) {
+async function editPost({ request }) {
     if (
         !JwtTokenHandler.isCurrentlyLoggedIn() ||
         JwtTokenHandler.returnType() !== "blogAuthor"
@@ -26,7 +26,6 @@ async function updatePost({ request }) {
 
     let postId = request.url.split("/");
     postId = postId[postId.length - 2];
-    console.log(postId);
 
     const postRequest = await fetch(
         import.meta.env.VITE_FULL_HOSTNAME + "/post/" + postId,
@@ -66,4 +65,4 @@ async function updatePost({ request }) {
     return { ok: postRequest.ok };
 }
 
-export default updatePost;
+export default editPost;
