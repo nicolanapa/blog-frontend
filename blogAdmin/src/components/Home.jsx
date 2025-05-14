@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router";
 import PostPreview from "./PostPreview";
 import "../styles/post.css";
@@ -7,12 +7,27 @@ function Home() {
     const { publishedPosts, unpublishedPosts } = useLoaderData();
     const [showPublishedPosts, setShowPublishedPosts] = useState(true);
 
+    useEffect(() => {
+        const params = new URLSearchParams(location.search);
+
+        if (params.has("published")) {
+            setShowPublishedPosts(
+                params.get("published") === "true" ? true : false
+            );
+        }
+    }, []);
+
     return (
         <main>
             <div>
                 <button
                     onClick={() => {
                         setShowPublishedPosts(true);
+                        window.history.replaceState(
+                            "",
+                            "",
+                            "/?published=" + true
+                        );
                     }}
                 >
                     Published
@@ -20,6 +35,11 @@ function Home() {
                 <button
                     onClick={() => {
                         setShowPublishedPosts(false);
+                        window.history.replaceState(
+                            "",
+                            "",
+                            "/?published=" + false
+                        );
                     }}
                 >
                     Unpublished
@@ -42,7 +62,9 @@ function Home() {
                                 id={post.id}
                                 userId={post.userId}
                                 title={post.title}
+                                content={post.content}
                                 publishDate={post.publishDate}
+                                isPublished={post.isPublished}
                                 key={post.id}
                             />
                         );
@@ -59,7 +81,9 @@ function Home() {
                                 id={post.id}
                                 userId={post.userId}
                                 title={post.title}
+                                content={post.content}
                                 publishDate={post.publishDate}
+                                isPublished={post.isPublished}
                                 key={post.id}
                             />
                         );
