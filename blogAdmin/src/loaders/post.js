@@ -1,5 +1,6 @@
 import { data } from "react-router";
 import postComments from "./postComments.js";
+import JwtTokenHandler from "../scripts/JwtTokenHandler.js";
 
 async function post({ params }) {
     if (isNaN(params.id) || parseInt(params.id) < 0) {
@@ -9,7 +10,12 @@ async function post({ params }) {
     let originalResponse;
 
     const post = await fetch(
-        import.meta.env.VITE_FULL_HOSTNAME + "/post/" + params.id
+        import.meta.env.VITE_FULL_HOSTNAME + "/post/" + params.id,
+        {
+            headers: {
+                Authorization: "Bearer " + JwtTokenHandler.getToken(),
+            },
+        }
     )
         .then(async (res) => {
             originalResponse = res;
