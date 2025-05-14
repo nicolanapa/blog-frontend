@@ -18,6 +18,7 @@ import login from "./actions/login.js";
 import signup from "./actions/signup.js";
 import addComment from "./actions/addComment.js";
 import newPost from "./actions/newPost.js";
+import editPost from "./actions/editPost.js";
 
 const routes = createBrowserRouter([
     {
@@ -42,6 +43,10 @@ const routes = createBrowserRouter([
                         loader: post,
                         Component: Post,
                         children: [
+                            {
+                                path: "edit",
+                                action: editPost,
+                            },
                             {
                                 path: "addComment",
                                 action: addComment,
