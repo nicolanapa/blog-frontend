@@ -21,7 +21,11 @@ async function changePublishState(post, setIsPublished, isPublished) {
 
     setIsPublished(!isPublished);
 
-    location.assign("/?published=" + !isPublished);
+    if (location.pathname === "/") {
+        location.assign("/?published=" + !isPublished);
+    } else if (location.pathname.includes("user")) {
+        location.reload();
+    }
 }
 
 export default changePublishState;
