@@ -19,34 +19,44 @@ function Home() {
 
     return (
         <main>
-            <div>
-                <button
-                    onClick={() => {
-                        setShowPublishedPosts(true);
-                        window.history.replaceState(
-                            "",
-                            "",
-                            "/?published=" + true
-                        );
-                    }}
-                >
-                    Published
-                </button>
-                <button
-                    onClick={() => {
-                        setShowPublishedPosts(false);
-                        window.history.replaceState(
-                            "",
-                            "",
-                            "/?published=" + false
-                        );
-                    }}
-                >
-                    Unpublished
-                </button>
+            <div className="container-posts-handling">
+                <div className="spacing">
+                    <button
+                        className={
+                            "button-published" +
+                            (showPublishedPosts === true ? " selected" : "")
+                        }
+                        onClick={() => {
+                            setShowPublishedPosts(true);
+                            window.history.replaceState(
+                                "",
+                                "",
+                                "/?published=" + true
+                            );
+                        }}
+                    >
+                        Published
+                    </button>
+                    <button
+                        className={
+                            "button-published" +
+                            (showPublishedPosts === false ? " selected" : "")
+                        }
+                        onClick={() => {
+                            setShowPublishedPosts(false);
+                            window.history.replaceState(
+                                "",
+                                "",
+                                "/?published=" + false
+                            );
+                        }}
+                    >
+                        Unpublished
+                    </button>
+                </div>
 
                 <Link to="/newPost">
-                    <button>New Post</button>
+                    <button className="button-new-post">New Post</button>
                 </Link>
             </div>
 
