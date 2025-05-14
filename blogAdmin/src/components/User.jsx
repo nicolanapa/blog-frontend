@@ -40,7 +40,9 @@ function User() {
                                 id={post.id}
                                 userId={post.userId}
                                 title={post.title}
+                                content={post.content}
                                 publishDate={post.publishDate}
+                                isPublished={post.isPublished}
                                 key={post.id}
                             />
                         ))}
