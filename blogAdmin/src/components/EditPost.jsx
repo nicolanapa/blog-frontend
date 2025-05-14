@@ -44,7 +44,7 @@ function EditPost(props) {
                 <option value="false">Unpublished</option>
             </select>
 
-            <button type="submit">Post</button>
+            <button type="submit">Update Post</button>
         </fetcher.Form>
     );
 }
