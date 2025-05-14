@@ -19,6 +19,7 @@ import signup from "./actions/signup.js";
 import addComment from "./actions/addComment.js";
 import newPost from "./actions/newPost.js";
 import editPost from "./actions/editPost.js";
+import editComment from "./actions/editComment.js";
 
 const routes = createBrowserRouter([
     {
@@ -52,6 +53,10 @@ const routes = createBrowserRouter([
                                 action: addComment,
                             },
                         ],
+                    },
+                    {
+                        path: "/comment/:id/edit",
+                        action: editComment,
                     },
                     {
                         path: "/authenticate",
