@@ -51,8 +51,3 @@
 .edit-comment-form input {
     padding: 10px;
 }
-
-.button-container {
-    display: flex;
-    justify-content: flex-end;
-}
