@@ -43,14 +43,20 @@ function Post() {
                 />
             )}
 
-            <button type="button" onClick={() => setViewMode(!viewMode)}>
-                <img
-                    src="/icons/edit.svg"
-                    alt="Edit this post and go into edit mode"
-                    width="30px"
-                    height="auto"
-                />
-            </button>
+            <div className="edit-button-container">
+                <button
+                    type="button"
+                    onClick={() => setViewMode(!viewMode)}
+                    className="edit-button"
+                >
+                    <img
+                        src="/icons/edit.svg"
+                        alt="Edit this post and go into edit mode"
+                        width="30px"
+                        height="auto"
+                    />
+                </button>
+            </div>
 
             <section className="comments-container">
                 <h3>Comments</h3>

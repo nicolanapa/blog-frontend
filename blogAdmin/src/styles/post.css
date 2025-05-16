@@ -69,3 +69,46 @@
     align-self: flex-start;
     margin: 2.5px 0 0 20px;
 }
+
+.edit-button-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.edit-button {
+    padding: 3px;
+}
+
+.post-form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    align-items: flex-start;
+}
+
+.post-form input,
+.post-form textarea {
+    border: 1px solid gray;
+    border-radius: 2px;
+    padding: 8px 15px;
+    margin-top: -7.5px;
+}
+
+#is-published {
+    border: 2px solid slategray;
+    border-radius: 2.5px;
+    background-color: white;
+    padding: 10px;
+}
+
+.submit-post-button {
+    border-style: none;
+    border-radius: 2px;
+    background-color: rgb(71, 169, 255);
+    color: rgb(255, 255, 255);
+    padding: 12px 20px;
+}
+
+.centered {
+    align-items: center;
+}

@@ -1,11 +1,12 @@
 import React from "react";
 import { useFetcher } from "react-router";
+import "../styles/post.css";
 
 function NewPost() {
     const fetcher = useFetcher();
 
     return (
-        <fetcher.Form method="post" action="/newPost">
+        <fetcher.Form method="post" action="/newPost" className="post-form centered">
             {fetcher.data?.ok && <p className="success">Success!</p>}
             {fetcher.data?.error && (
                 <p className="error">{fetcher.data.error}</p>
@@ -37,7 +38,9 @@ function NewPost() {
                 <option value="false">Unpublished</option>
             </select>
 
-            <button type="submit">Post</button>
+            <button type="submit" className="submit-post-button">
+                Post
+            </button>
         </fetcher.Form>
     );
 }

@@ -1,12 +1,17 @@
 import PropTypes from "prop-types";
 import React from "react";
 import { useFetcher } from "react-router";
+import "../styles/post.css";
 
 function EditPost(props) {
     const fetcher = useFetcher();
 
     return (
-        <fetcher.Form method="post" action={"/post/" + props.id + "/edit"}>
+        <fetcher.Form
+            method="post"
+            action={"/post/" + props.id + "/edit"}
+            className="post-form"
+        >
             {fetcher.data?.ok && <p className="success">Success!</p>}
             {fetcher.data?.error && (
                 <p className="error">{fetcher.data.error}</p>
@@ -44,7 +49,9 @@ function EditPost(props) {
                 <option value="false">Unpublished</option>
             </select>
 
-            <button type="submit">Update Post</button>
+            <button type="submit" className="submit-post-button">
+                Update Post
+            </button>
         </fetcher.Form>
     );
 }
