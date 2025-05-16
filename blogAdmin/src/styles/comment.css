@@ -52,15 +52,7 @@
     padding: 10px;
 }
 
-.update-button {
-    
-}
-
 .edit-button-container {
     display: flex;
     justify-content: flex-end;
-}
-
-.edit-button {
-    padding: 3px;
 }

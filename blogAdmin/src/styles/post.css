@@ -23,7 +23,7 @@
     /*border: 1px solid rgb(130, 130, 130);
     border-radius: 10px;*/
     padding: 30px 25px;
-    margin: 15px 6%;
+    margin: 15px 2%;
 }
 
 .post-info {
@@ -73,10 +73,6 @@
 .edit-button-container {
     display: flex;
     justify-content: flex-end;
-}
-
-.edit-button {
-    padding: 3px;
 }
 
 .post-form {

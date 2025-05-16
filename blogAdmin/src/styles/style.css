@@ -35,6 +35,16 @@ a:visited {
     margin-top: 25px;
 }
 
+.edit-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(226, 220, 255);
+    border: 2px solid rgb(214, 214, 251);
+    border-radius: 3px;
+    padding: 7px;
+}
+
 .selected {
     animation-name: selected-animation;
     animation-duration: 1.5s;
