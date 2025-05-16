@@ -41,14 +41,20 @@ function Comment(props) {
 
             {!viewMode && <EditComment id={props.id} content={props.content} />}
 
-            <button type="button" onClick={() => setViewMode(!viewMode)}>
-                <img
-                    src="/icons/edit.svg"
-                    alt="Edit this comment and go into edit mode"
-                    width="20px"
-                    height="auto"
-                />
-            </button>
+            <div className="edit-button-container">
+                <button
+                    type="button"
+                    onClick={() => setViewMode(!viewMode)}
+                    className="edit-button"
+                >
+                    <img
+                        src="/icons/edit.svg"
+                        alt="Edit this comment and go into edit mode"
+                        width="20px"
+                        height="auto"
+                    />
+                </button>
+            </div>
         </article>
     );
 }

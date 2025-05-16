@@ -24,7 +24,7 @@
     margin: 10px 0;
 }
 
-.comment div {
+.comment div:nth-child(1) {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -38,4 +38,29 @@
 
 .content {
     margin-left: 12.5px;
+}
+
+.edit-comment-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 7.5px;
+    padding: 10px;
+}
+
+.edit-comment-form input {
+    padding: 10px;
+}
+
+.update-button {
+    
+}
+
+.edit-button-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.edit-button {
+    padding: 3px;
 }
