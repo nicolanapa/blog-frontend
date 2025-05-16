@@ -46,7 +46,7 @@ function Post() {
                 />
             )}
 
-            <div className="edit-button-container">
+            <div className="button-container">
                 <button
                     type="button"
                     onClick={() => setViewMode(!viewMode)}

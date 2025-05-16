@@ -52,7 +52,7 @@
     padding: 10px;
 }
 
-.edit-button-container {
+.button-container {
     display: flex;
     justify-content: flex-end;
 }

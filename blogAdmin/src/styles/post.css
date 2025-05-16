@@ -70,11 +70,6 @@
     margin: 2.5px 0 0 20px;
 }
 
-.edit-button-container {
-    display: flex;
-    justify-content: flex-end;
-}
-
 .post-form {
     display: flex;
     flex-direction: column;

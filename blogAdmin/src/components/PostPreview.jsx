@@ -3,6 +3,7 @@ import { Link } from "react-router";
 import PropTypes from "prop-types";
 import changePublishState from "../scripts/changePublishState";
 import "../styles/post.css";
+import deleteX from "../scripts/deleteX";
 
 function PostPreview(props) {
     const [isPublished, setIsPublished] = useState(props.isPublished);
@@ -32,15 +33,34 @@ function PostPreview(props) {
                 <Link to={"/post/" + props.id}>{props.title}</Link>
             </h3>
 
-            <button
-                type="button"
-                className="button-published spacing-top"
-                onClick={() =>
-                    changePublishState(props, setIsPublished, isPublished)
-                }
-            >
-                {isPublished ? "Unpublish" : "Publish"}
-            </button>
+            <div className="button-container spacing-top">
+                <button
+                    type="button"
+                    className="button-published"
+                    onClick={() =>
+                        changePublishState(props, setIsPublished, isPublished)
+                    }
+                >
+                    {isPublished ? "Unpublish" : "Publish"}
+                </button>
+
+                <button
+                    type="button"
+                    onClick={async () => {
+                        if (await deleteX("post", props.id)) {
+                            location.reload();
+                        }
+                    }}
+                    className="edit-button"
+                >
+                    <img
+                        src="/icons/delete.svg"
+                        alt="Delete this user"
+                        width="20px"
+                        height="auto"
+                    />
+                </button>
+            </div>
         </article>
     );
 }

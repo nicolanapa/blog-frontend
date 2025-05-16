@@ -45,6 +45,13 @@ a:visited {
     padding: 7px;
 }
 
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    column-gap: 14px;
+}
+
 .selected {
     animation-name: selected-animation;
     animation-duration: 1.5s;

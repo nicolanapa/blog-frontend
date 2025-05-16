@@ -42,7 +42,7 @@ function Comment(props) {
 
             {!viewMode && <EditComment id={props.id} content={props.content} />}
 
-            <div className="edit-button-container">
+            <div className="button-container">
                 <button
                     type="button"
                     onClick={() => setViewMode(!viewMode)}
