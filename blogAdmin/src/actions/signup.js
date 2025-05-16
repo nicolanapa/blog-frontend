@@ -41,7 +41,11 @@ async function signup({ request }) {
         return { ok: false, error: loginData.errors };
     }
 
-    JwtTokenHandler.updateToken(loginData.jwt);
+    if (loginData.jwt !== undefined) {
+        JwtTokenHandler.updateToken(loginData.jwt);
+    } else {
+        return { ok: false, error: "Success, now you need to login!" };
+    }
 
     if (JwtTokenHandler.returnType() !== "blogAuthor") {
         JwtTokenHandler.removeToken();
