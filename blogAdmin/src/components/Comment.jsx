@@ -21,7 +21,7 @@ function Comment(props) {
                             />
                             <h4>
                                 <Link to={"/user/" + props.userId}>
-                                    User{props.userId}
+                                    {props.username}
                                 </Link>
                             </h4>
                         </div>
@@ -62,6 +62,7 @@ function Comment(props) {
 Comment.propTypes = {
     id: PropTypes.number.isRequired,
     userId: PropTypes.number,
+    username: PropTypes.string.isRequired,
     publishDate: PropTypes.instanceOf(Date).isRequired,
     content: PropTypes.string.isRequired,
 };

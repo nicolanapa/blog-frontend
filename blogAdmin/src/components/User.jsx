@@ -39,6 +39,7 @@ function User() {
                             <PostPreview
                                 id={post.id}
                                 userId={post.userId}
+                                username={post.user.username}
                                 title={post.title}
                                 content={post.content}
                                 publishDate={post.publishDate}

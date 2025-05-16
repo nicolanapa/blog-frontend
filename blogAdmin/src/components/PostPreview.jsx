@@ -24,7 +24,8 @@ function PostPreview(props) {
             </small>
 
             <address>
-                Posted by <Link to={"/user/" + props.userId}>User</Link>
+                Posted by{" "}
+                <Link to={"/user/" + props.userId}>{props.username}</Link>
             </address>
 
             <h3>
@@ -47,6 +48,7 @@ function PostPreview(props) {
 PostPreview.propTypes = {
     id: PropTypes.number.isRequired,
     userId: PropTypes.number.isRequired,
+    username: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     content: PropTypes.string.isRequired,
     publishDate: PropTypes.instanceOf(Date).isRequired,

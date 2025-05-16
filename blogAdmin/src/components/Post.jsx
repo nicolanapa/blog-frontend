@@ -22,7 +22,9 @@ function Post() {
 
                         <address>
                             Posted by{" "}
-                            <Link to={"/user/" + post.userId}>User</Link>
+                            <Link to={"/user/" + post.userId}>
+                                {post.user.username}
+                            </Link>
                         </address>
 
                         <h2>
@@ -67,6 +69,7 @@ function Post() {
                     <Comment
                         id={comment.id}
                         userId={comment.userId}
+                        username={comment.user.username}
                         publishDate={comment.publishDate}
                         content={comment.content}
                         key={comment.id}
