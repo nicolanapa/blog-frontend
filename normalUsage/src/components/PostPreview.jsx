@@ -6,7 +6,13 @@ import "../styles/post.css";
 function PostPreview(props) {
     return (
         <article className="post-preview">
-            <img src="/icons/post.svg" alt="Post" width="48px" height="auto" className="preview-photo" />
+            <img
+                src="/icons/post.svg"
+                alt="Post"
+                width="48px"
+                height="auto"
+                className="preview-photo"
+            />
 
             <small>
                 <time dateTime={props.publishDate}>
@@ -15,7 +21,8 @@ function PostPreview(props) {
             </small>
 
             <address>
-                Posted by <Link to={"/user/" + props.userId}>User</Link>
+                Posted by{" "}
+                <Link to={"/user/" + props.userId}>{props.username}</Link>
             </address>
 
             <h3>
@@ -28,6 +35,7 @@ function PostPreview(props) {
 PostPreview.propTypes = {
     id: PropTypes.number.isRequired,
     userId: PropTypes.number.isRequired,
+    username: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     publishDate: PropTypes.instanceOf(Date).isRequired,
 };

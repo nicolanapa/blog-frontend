@@ -17,6 +17,7 @@ function Home() {
                     <PostPreview
                         id={post.id}
                         userId={post.userId}
+                        username={post.user.username}
                         title={post.title}
                         publishDate={post.publishDate}
                         key={post.id}
