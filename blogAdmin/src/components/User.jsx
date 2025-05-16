@@ -3,6 +3,7 @@ import { useLoaderData } from "react-router";
 import PostPreview from "./PostPreview";
 import "../styles/user.css";
 import "../styles/post.css";
+import deleteX from "../scripts/deleteX";
 
 function User() {
     const { user, posts } = useLoaderData();
@@ -25,7 +26,23 @@ function User() {
                                 : "Blog Author"}
                         </p>
                         <address className="username">{user.username}</address>
-                        <small className="id">{user.id}</small>
+
+                        <button
+                            type="button"
+                            onClick={async () => {
+                                if (await deleteX("user", user.id)) {
+                                    location.assign("/");
+                                }
+                            }}
+                            className="edit-button"
+                        >
+                            <img
+                                src="/icons/delete.svg"
+                                alt="Delete this user"
+                                width="20px"
+                                height="auto"
+                            />
+                        </button>
                     </div>
                 </div>
             </div>

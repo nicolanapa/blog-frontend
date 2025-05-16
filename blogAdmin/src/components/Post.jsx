@@ -4,6 +4,7 @@ import Comment from "./Comment";
 import AddComment from "./AddComment";
 import "../styles/post.css";
 import EditPost from "./EditPost";
+import deleteX from "../scripts/deleteX";
 
 function Post() {
     const { post, comments } = useLoaderData();
@@ -54,6 +55,23 @@ function Post() {
                     <img
                         src="/icons/edit.svg"
                         alt="Edit this post and go into edit mode"
+                        width="30px"
+                        height="auto"
+                    />
+                </button>
+
+                <button
+                    type="button"
+                    onClick={async () => {
+                        if (await deleteX("post", post.id)) {
+                            location.assign("/");
+                        }
+                    }}
+                    className="edit-button"
+                >
+                    <img
+                        src="/icons/delete.svg"
+                        alt="Delete this post"
                         width="30px"
                         height="auto"
                     />

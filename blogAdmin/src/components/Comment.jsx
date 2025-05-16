@@ -3,6 +3,7 @@ import { Link } from "react-router";
 import PropTypes from "prop-types";
 import "../styles/comment.css";
 import EditComment from "./EditComment";
+import deleteX from "../scripts/deleteX";
 
 function Comment(props) {
     const [viewMode, setViewMode] = useState(true);
@@ -50,6 +51,23 @@ function Comment(props) {
                     <img
                         src="/icons/edit.svg"
                         alt="Edit this comment and go into edit mode"
+                        width="20px"
+                        height="auto"
+                    />
+                </button>
+
+                <button
+                    type="button"
+                    onClick={async () => {
+                        if (await deleteX("comment", props.id)) {
+                            location.reload();
+                        }
+                    }}
+                    className="edit-button"
+                >
+                    <img
+                        src="/icons/delete.svg"
+                        alt="Delete this comment"
                         width="20px"
                         height="auto"
                     />
